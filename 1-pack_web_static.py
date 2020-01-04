@@ -7,6 +7,7 @@ import datetime
 
 
 def do_pack():
+    """Function that generates a .tgz archive from the contents of the web_static"""
     try:
         local("mkdir -p versions")
         now = datetime.datetime.now()
