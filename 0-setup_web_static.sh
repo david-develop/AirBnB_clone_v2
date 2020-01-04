@@ -10,7 +10,7 @@ sudo mkdir -p /data/web_static/shared/ /data/web_static/releases/test/
 
 # Create a HTML file
 html_str="<html>\n  <head>\n  </head>\n  <body>\n    Holberton School\n  </body>\n</html>"
-echo -e $html_str | sudo tee /data/web_static/releases/test/index.html
+echo -e "$html_str" | sudo tee /data/web_static/releases/test/index.html
 
 # Create a symbolic link /data/web_static/current linked to the /data/web_static/releases/test/ folder
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
@@ -23,3 +23,4 @@ sudo sed -i '38i\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/
 
 # Restart
 sudo service nginx restart
+exit 0
