@@ -65,7 +65,11 @@ def do_clean(number=0):
     else:
         erase = int(number) + 1
 
-    with lcd("versions"):
-        local('ls -1t | tail -n +{} | xargs rm -rf'.format(erase))
-    with cd("/data/web_static/releases"):
-        run('ls -1t | tail -n +{} | xargs rm -rf'.format(erase))
+    if os.path.exists('versions'):
+        with lcd("versions"):
+            local('ls -t | tail -n +{} | xargs rm -rf'.format(erase))
+    try:
+        with cd("/data/web_static/releases"):
+            run('ls -t | tail -n +{} | xargs rm -rf'.format(erase))
+    except:
+        pass
