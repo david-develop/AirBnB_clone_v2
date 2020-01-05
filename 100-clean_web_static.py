@@ -14,6 +14,8 @@ env.user = 'ubuntu'
 def do_clean(number=0):
     """Clean unnecesary versions"""
 
+    number = int(number)
+
     if number == 0:
         erase = 2
     else:
