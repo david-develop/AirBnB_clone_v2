@@ -4,10 +4,10 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-      <H1>{{ class_n }}</H1>
+      <H1>States</H1>
       <UL>
-	{% for state_id, state_name in all_states | dictsort(by='value') %}
-	<LI>{{ state_id }}: <B>{{ state_name }}</B></LI>
+	{% for state in all_states | sort(attribute='name') %}
+	<LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
 	{% endfor %}
       </UL>
     </BODY>
