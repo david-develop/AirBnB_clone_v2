@@ -6,8 +6,8 @@
     <BODY>
       <H1>{{ class_n }}</H1>
       <UL>
-	{% for key, value in all_states.items() %}
-	<LI>{{key}}: <B>{{ value }}</B></LI>
+	{% for state_id, state_name in all_states | dictsort(by='value') %}
+	<LI>{{ state_id }}: <B>{{ state_name }}</B></LI>
 	{% endfor %}
       </UL>
     </BODY>
