@@ -3,6 +3,6 @@
 **/*~
 **/\#*
 
-# Ignore compiled __pycache__ folder
+# Ignore compiled __pycache__ folder and pyc
 **/__pycache__/*
-**/__pycache__
+**/*.pyc
