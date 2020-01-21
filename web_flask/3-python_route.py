@@ -7,21 +7,25 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
     """Define endpoint / and return Hello HBNB!"""
     return 'Hello HBNB!'
+
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """Define endpoint /hbnb and return HBNB"""
     return 'HBNB'
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
     """Define endpoint /c and return C + text"""
     msj = text.replace('_', ' ')
     return 'C %s' % msj
+
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
