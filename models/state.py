@@ -5,6 +5,8 @@ from sqlalchemy.orm import relationship
 from models.place import place_amenity
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
+from models.city import City
+import models
 import os
 
 
@@ -25,6 +27,6 @@ class State(BaseModel, Base):
             """
             my_list = []
             for key_obj, value in models.storage.all(City).items():
-                if value["state_id"] == self.id:
+                if value.state_id == self.id:
                     my_list.append(value)
             return my_list
