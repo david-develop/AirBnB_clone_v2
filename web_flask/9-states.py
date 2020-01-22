@@ -20,7 +20,8 @@ def teardown_storage(self):
 def states_list():
     """display a HTML page with all states and cities"""
     all_states = storage.all(State).values()
-    return render_template('9-states.html', all_states=all_states, state_id=None)
+    return render_template('9-states.html', all_states=all_states,
+                           state_id=None)
 
 
 @app.route('/states/<id_str>', strict_slashes=False)
