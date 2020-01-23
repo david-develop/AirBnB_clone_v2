@@ -57,7 +57,8 @@ class DBStorage:
                 cls = eval(cls)
             my_list = self.__session.query(cls).all()
             for obj in my_list:
-                my_dict.update({"{}.{}".format(type(obj).__name__, obj.id): obj})
+                my_dict.update({"{}.{}".format(type(obj).__name__,
+                                               obj.id): obj})
         return my_dict
 
     def new(self, obj):
